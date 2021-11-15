@@ -32,15 +32,12 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-This is a REST API front for undocumented, public SOAP/WebService from the Mexican Government SAT (Secretaría de Administración Tributaria), in order to verify invoices and or W2 (Payroll Recipts) online.
+This is a REST API front for undocumented, public SOAP/WebService from the Mexican Government SAT (Secretaría de Administración Tributaria), in order to verify invoices and or W2 (Payroll Receipts) online.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
-
 * [Python](https://python.org/)
 * [FastAPI](https://fastapi.tiangolo.com/)
 * [Suds-Py3](https://github.com/cackharot/suds-py3/)
@@ -52,33 +49,50 @@ This is a REST API front for undocumented, public SOAP/WebService from the Mexic
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you can setup your project locally.
-To get a local copy up and running follow these simple example steps.
+This is an example of how you can setup your project locally, and how to build it and run it locally in Docker. You may push docker image to AWS, Azure or GCP using containers. To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them. Make sure you have python installed.
-* npm
+Make sure you have both brew and python installed. I will be explaining how to run this on a Mac OSx, (I use a Apple M1 MacBook Pro and will show some tricks to build docker and push to azure), but you can do this on any Windows or linux setup.
+
+If you have brew installed, skip this step.
+* Brew (The missing package manager for Mac OSx)
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+If you have pyhton3 installed, with anaconda or anything you like, skip this step.
+* python3
   ```sh
-  npm install npm@latest -g
+  brew install python3
   ```
+This will install python3 and pip to install python libraries.
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo.
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/mexmarv/mx-sat-verifica.git
    ```
-3. Install NPM packages
+2. Install Python libraries (you can use pip only if you´ve sourced to pip3).
    ```sh
-   npm install
+   pip3 install fastapi
+   pip3 install suds-py3
+   pip3 uvicorn
    ```
-4. Enter your API in `config.js`
+3. You can run uvicorn with reload option so you can modify code as you test things out.
+   ```sh
+   uvicorn main:app --reload
+   ```
+4. You will run default on your local machine on port :8000
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   INFO:     Will watch for changes in these directories: ['/Users/marvin/Documents/Code/mx-sat-verifica']
+   INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+   INFO:     Started reloader process [35729] using watchgod
+   INFO:     Started server process [35731]
+   INFO:     Waiting for application startup.
+   INFO:     Application startup complete.
    ```
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
