@@ -1,12 +1,10 @@
 <h3 align="center">SAT Verifica (México) - Facturas y Recibos de Nómina</h3>
   <p align="center">
-    Verify Mexican Invoices and W2s with government SAT entity.
+    Verify mexican invoices and payroll receipts with government SAT entity.
     <br />
     <a href="https://github.com/mexmarv/mx-sat-verifica"><strong>Explore the docs »</strong></a>
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
