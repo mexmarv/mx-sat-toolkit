@@ -166,11 +166,10 @@ Distributed under the Creative Commons Zero 1.0 License. See `LICENSE.txt` for m
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@mexmarv](https://twitter.com/mexmarv) - mexmarv@gmail.com
-
+Marvin Nahmias - [@mexmarv](https://twitter.com/mexmarv) - mexmarv@gmail.com
 Project Link: [https://github.com/mexmarv/mx-sat-verifica](https://github.com/mexmarv/mx-sat-verifica)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Enjoy!
+## Enjoy! #vamoscontodo. Marvs.
 
