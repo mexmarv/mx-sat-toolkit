@@ -68,7 +68,7 @@ If you have pyhton3 installed, with anaconda or anything you like, skip this ste
   ```
 This will install python3 and pip to install python libraries.
 
-### Installation
+### Installation and Running the API
 
 1. Clone the repo.
    ```sh
@@ -93,6 +93,10 @@ This will install python3 and pip to install python libraries.
    INFO:     Waiting for application startup.
    INFO:     Application startup complete.
    ```
+5. If you prefer to run it on Docker, make sure you have it installed prior to this. 
+   ```sh
+   docker build -t mx-sat-verifica . 
+   ```
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
@@ -103,59 +107,25 @@ Now head to a favorite browser and open http://localhost:8000/sat. You will get 
 {"detail":[{"loc":["query","rfce"],"msg":"field required","type":"value_error.missing"},{"loc":["query","rfcr"],"msg":"field required","type":"value_error.missing"},{"loc":["query","monto"],"msg":"field required","type":"value_error.missing"},{"loc":["query","folio"],"msg":"field required","type":"value_error.missing"}]}
 ```
 The required parameters are:
-- rfce (RFC Emisor or the originating party´s RFC (Registro Federal de Contribuyentes), the one that signed the Invoice or W2)
-- rfcr (RFC Receptor or the RFC of the party that was granted the Invoice or W2)
-- monto (amount to verify in the document)
-- folio (this is the folio unique number of the document)
+- <b>rfce</b> (RFC Emisor or the originating party´s RFC (Registro Federal de Contribuyentes), the one that signed the Invoice or W2)
+- <b>rfcr</b> (RFC Receptor or the RFC of the party that was granted the Invoice or W2)
+- <b>monto</b> (amount to verify in the document)
+- <b>folio</b> (this is the folio unique number of the document)
 
 All these parameters can be consulted on any valid printed invoice or payroll receipt.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+_To view the Swagger, OpenAPI spec for Postman or any other cool tool, just browse to http://localhost:8000/docs or http://localhost:8000/redoc. You can even invoke the API from the /docs endpoint. 
+
+FastAPI rocks!
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [] Feature 1
-- [] Feature 2
-- [] Feature 3
-    - [] Nested Feature
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the Creative Commons 1.0 License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- CONTACT -->
 ## Contact
@@ -166,8 +136,6 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
@@ -177,20 +145,3 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo_name/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo_name/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: images/screenshot.png
