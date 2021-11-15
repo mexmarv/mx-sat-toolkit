@@ -95,12 +95,20 @@ This will install python3 and pip to install python libraries.
    ```
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Now head to a favorite browser and open http://localhost:8000/sat. You will get the required paameters in order to return the validation with the SAT.
+```JSON
+{"detail":[{"loc":["query","rfce"],"msg":"field required","type":"value_error.missing"},{"loc":["query","rfcr"],"msg":"field required","type":"value_error.missing"},{"loc":["query","monto"],"msg":"field required","type":"value_error.missing"},{"loc":["query","folio"],"msg":"field required","type":"value_error.missing"}]}
+```
+The required parameters are:
+- rfce (RFC Emisor or the originating party´s RFC (Registro Federal de Contribuyentes), the one that signed the Invoice or W2)
+- rfcr (RFC Receptor or the RFC of the party that was granted the Invoice or W2)
+- monto (amount to verify in the document)
+- folio (this is the folio unique number of the document)
+
+All these parameters can be consulted on any valid printed invoice or payroll receipt.
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
