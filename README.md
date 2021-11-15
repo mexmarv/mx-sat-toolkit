@@ -114,7 +114,7 @@ The required parameters are:
 
 All these parameters can be consulted on any valid printed invoice or payroll receipt.
 
-_To view the Swagger, OpenAPI spec for Postman or any other cool tool, just browse to http://localhost:8000/docs or http://localhost:8000/redoc. You can even invoke the API from the /docs endpoint. 
+_To view the Swagger, OpenAPI spec to use on Postman or any other cool tool, just browse to http://localhost:8000/docs or http://localhost:8000/redoc. You can even invoke the API from the /docs endpoint._ 
 
 FastAPI rocks!
 
@@ -123,25 +123,18 @@ FastAPI rocks!
 <!-- LICENSE -->
 ## License
 
-Distributed under the Creative Commons 1.0 License. See `LICENSE.txt` for more information.
+Distributed under the Creative Commons Zero 1.0 License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Your Name - [@mexmarv](https://twitter.com/mexmarv) - mexmarv@gmail.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* []()
-* []()
-* []()
+Project Link: [https://github.com/mexmarv/mx-sat-verifica](https://github.com/mexmarv/mx-sat-verifica)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+## Enjoy!
 
