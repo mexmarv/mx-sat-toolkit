@@ -97,6 +97,15 @@ This will install python3 and pip to install python libraries.
    ```sh
    docker build -t mx-sat-verifica . 
    ```
+   Then just make sure (the script that will run initially will run uvicorn on port 80 multithreaded.
+   
+   <b>For M1 Apple Chip Mac OS users:</b>
+   Little trick, I tried for ours building and deploying to Azure (make sure you are logged in and can publish a container), you need to build the docker image with AMD/Intel in mind in order to run.
+   ```sh
+   docker buildx build --platform=linux/amd64 --load -t mx-sat-verifica . 
+   ```
+   ... and now you are good to go and push that amd64 image to the cloud.
+   
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
@@ -113,6 +122,32 @@ The required parameters are:
 - <b>folio</b> (this is the folio unique number of the document)
 
 All these parameters can be consulted on any valid printed invoice or payroll receipt.
+
+Also you can enter this in the whole GET statement:
+* Curl:
+```sh
+curl -X 'GET' \
+  'http://localhost:8000/sat?rfce=XXX1234567&rfcr=YYY12345678&monto=1000&folio=AXBVVDGGDGD' \
+  -H 'accept: application/json'
+```
+
+* http:
+```sh
+http://localhost:8000/sat?rfce=XXX1234567&rfcr=YYY12345678&monto=1000&folio=AXBVVDGGDGD
+```
+All these parameters can be consulted on any valid printed invoice or payroll receipt.
+
+The response (TB Documented), but its pretty intuitive throws something like this:
+```JSON
+{
+  "CodigoEstatus": "N - 601: La expresión impresa proporcionada no es válida.",
+  "EsCancelable": null,
+  "Estado": "No Encontrado",
+  "EstatusCancelacion": null,
+  "ValidacionEFOS": null
+}
+```
+If you get a <b>Y</b> then its valid and you make sure Estado is not cancelled, and you have just verified if an Invoice or Payroll Receipt is valid. This allows you to determine validity, your companies submitted invoices, and even determine income deteremination for loans in a fintech/neobank space.
 
 _To view the Swagger, OpenAPI spec to use on Postman or any other cool tool, just browse to http://localhost:8000/docs or http://localhost:8000/redoc. You can even invoke the API from the /docs endpoint._ 
 
