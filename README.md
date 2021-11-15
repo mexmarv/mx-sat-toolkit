@@ -1,6 +1,7 @@
 <h3 align="center">SAT Verifica (México) - Facturas y Recibos de Nómina</h3>
   <p align="center">
-    Verify mexican invoices and payroll receipts with government SAT entity.
+    Verify mexican invoices and payroll receipts with government SAT entity.<br/>
+    It is also a great tutorial to learn the amazing FastAPI framework, and run it with uvicorn as multithreaded, and wrap an old SOAP Webservice call. As a bonus, you can build a docker image and deploy it. It truly is extremely fast and practically works anywhere. Enjoy!  
     <br />
     <a href="https://github.com/mexmarv/mx-sat-verifica"><strong>Explore the docs »</strong></a>
   </p>
