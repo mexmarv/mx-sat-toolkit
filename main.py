@@ -8,6 +8,7 @@
 import json, ssl
 from fastapi import FastAPI, Response
 from suds.client import Client
+from pyfiscal.generate import GenerateRFC
 
 # Funcion para convertir SUDS a DICT/Tuple
 def fastest_object_to_dict(obj):
@@ -29,25 +30,48 @@ def fastest_object_to_dict(obj):
 ssl._create_default_https_context = ssl._create_unverified_context
 
 #Inicializa FastAPI
-app = FastAPI(title="SAT México APIs - Toolkit (Marvin Nahmias)",
-    description="Aquí encontraras una manera de verificar si una factura o recibo de nómina en México son validos, via un REST API como puente al SAT, sin ´throttling´.",
-    version="0.0.1",
-    terms_of_service="http://about.me/mexmarv")
+app = FastAPI(title="SAT-MX Toolkit de APIs",
+    description="Toolkit de APIs de servicios con el SAT. Revisar CFDIs y Calculo de RFC con Homoclave.",
+    version="1.2",
+    contact={
+        "name": "Marvin Nahmias",
+        "url": "http://about.me/mexmarv",
+        "email": "mexmarv@gmail.com",
+    },
+    license_info={
+        "name": "Apache 2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0.html",
+    }
+    )
 
 #en el root
 @app.get("/")
 async def root():
-    return {"Bienvenid@!": "Consulta /docs para mas información de los APIs."}
+    return {"Bienvenid@ al toolkit del SAT!": "Consulta /docs para mas información de los APIs."}
 
-@app.get("/sat")
-async def sat(rfce: str, rfcr: str, monto: str, uuid: str):     
-    obj_sat = {"rfce": rfce, "rfcr": rfcr, "monto": monto, "uuid": uuid}   
+@app.get("/sat-cdfi")
+async def cdfi(rfce: str, rfcr: str, monto: str, folio: str):     
+    obj_cfdi = {"rfce": rfce, "rfcr": rfcr, "monto": monto, "folio": folio}   
     
-    if (rfce != "") or (rfcr != "") or (monto != "") or (uuid != ""):
-        sat_query = "re=" + rfce + "&rr=" + rfcr + "&tt=" + monto + "&id=" + uuid
+    if (rfce != "") or (rfcr != "") or (monto != "") or (folio != ""):
+        sat_query = "re=" + rfce + "&rr=" + rfcr + "&tt=" + monto + "&id=" + folio
         client = Client('https://consultaqr.facturaelectronica.sat.gob.mx/ConsultaCFDIService.svc?WDSL')
         result = client.service.Consulta(sat_query)
         ParsedResponse = fastest_object_to_dict(result)
 
     return Response(content=json.dumps(ParsedResponse),media_type="application/json")
+
+@app.get("/sat-rfc")
+async def rfc(nombre: str, apellido1: str, apellido2: str, fecha: str):      
+    if (nombre != "") or (apellido1 != "") or (apellido2 != "") or (fecha != ""):
+        kwargs = {
+            "complete_name": nombre,
+            "last_name": apellido1,
+            "mother_last_name": apellido2,
+            "birth_date": fecha
+        }
+
+        rfc = GenerateRFC(**kwargs)
+        results = {"RFC": rfc.data}
+    return results
 

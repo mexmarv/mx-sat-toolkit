@@ -1,3 +1,4 @@
 FastAPI
 suds-py3
+pyfiscal
 uvicorn
