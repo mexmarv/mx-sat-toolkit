@@ -39,8 +39,8 @@ app = FastAPI(title="SAT-MX Toolkit de APIs",
         "email": "mexmarv@gmail.com",
     },
     license_info={
-        "name": "Apache 2.0",
-        "url": "https://www.apache.org/licenses/LICENSE-2.0.html",
+        "name": "Creative Commons Zero 1.0",
+        "url": "https://github.com/mexmarv/mx-sat-toolkit/blob/main/LICENSE",
     }
     )
 
