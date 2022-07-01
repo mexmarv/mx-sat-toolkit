@@ -98,7 +98,7 @@ This will install python3 and pip to install python libraries.
    ```
 5. If you prefer to run it on Docker, make sure you have it installed prior to this. 
    ```sh
-   docker build -t mx-sat-verifica . 
+   docker build -t mx-sat-toolkit . 
    ```
    Then just make sure (the script that will run initially will run uvicorn on port 80 multithreaded.
    
@@ -114,7 +114,7 @@ This will install python3 and pip to install python libraries.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Now head to a favorite browser and open http://localhost:8000/sat. You will get the required paameters in order to return the validation with the SAT.
+Now head to a favorite browser and open http://localhost:8000/cfdi. You will get the required paameters in order to return the validation with the SAT.
 ```JSON
 {"detail":[{"loc":["query","rfce"],"msg":"field required","type":"value_error.missing"},{"loc":["query","rfcr"],"msg":"field required","type":"value_error.missing"},{"loc":["query","monto"],"msg":"field required","type":"value_error.missing"},{"loc":["query","folio"],"msg":"field required","type":"value_error.missing"}]}
 ```
