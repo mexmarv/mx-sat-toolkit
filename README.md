@@ -80,6 +80,7 @@ This will install python3 and pip to install python libraries.
    ```sh
    pip3 install fastapi
    pip3 install suds-py3
+   pip3 install pyfiscal
    pip3 uvicorn
    ```
 3. You can run uvicorn with reload option so you can modify code as you test things out.
