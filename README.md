@@ -105,7 +105,7 @@ This will install python3 and pip to install python libraries.
    <b>For M1 Apple Chip Mac OS users:</b>
    Little trick, I tried for ours building and deploying to Azure (make sure you are logged in and can publish a container), you need to build the docker image with AMD/Intel in mind in order to run.
    ```sh
-   docker buildx build --platform=linux/amd64 --load -t mx-sat-verifica . 
+   docker buildx build --platform=linux/amd64 --load -t mx-sat-toolkit . 
    ```
    ... and now you are good to go and push that amd64 image to the cloud.
    
