@@ -74,7 +74,7 @@ This will install python3 and pip to install python libraries.
 
 1. Clone the repo.
    ```sh
-   git clone https://github.com/mexmarv/mx-sat-verifica.git
+   git clone https://github.com/mexmarv/mx-sat-toolkit.git
    ```
 2. Install Python libraries (you can use pip only if you´ve sourced to pip3).
    ```sh
@@ -87,9 +87,9 @@ This will install python3 and pip to install python libraries.
    ```sh
    uvicorn main:app --reload
    ```
-4. You will run default on your local machine on port :8000
+4. You will run default on your local machine on port :80
    ```js
-   INFO:     Will watch for changes in these directories: ['/Users/marvin/Documents/Code/mx-sat-verifica']
+   INFO:     Will watch for changes in these directories: ['/Users/marvin/Documents/Code/mx-sat-toolkit']
    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
    INFO:     Started reloader process [35729] using watchgod
    INFO:     Started server process [35731]
@@ -114,7 +114,7 @@ This will install python3 and pip to install python libraries.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Now head to a favorite browser and open http://localhost:8000/cfdi. You will get the required paameters in order to return the validation with the SAT.
+Now head to a favorite browser and open http://localhost:8000/sat-cfdi. You will get the required paameters in order to return the validation with the SAT.
 ```JSON
 {"detail":[{"loc":["query","rfce"],"msg":"field required","type":"value_error.missing"},{"loc":["query","rfcr"],"msg":"field required","type":"value_error.missing"},{"loc":["query","monto"],"msg":"field required","type":"value_error.missing"},{"loc":["query","folio"],"msg":"field required","type":"value_error.missing"}]}
 ```
@@ -130,13 +130,13 @@ Also you can enter this in the whole GET statement:
 * Curl:
 ```sh
 curl -X 'GET' \
-  'http://localhost:8000/sat?rfce=XXX1234567&rfcr=YYY12345678&monto=1000&folio=AXBVVDGGDGD' \
+  'http://localhost:80/sat?rfce=XXX1234567&rfcr=YYY12345678&monto=1000&folio=AXBVVDGGDGD' \
   -H 'accept: application/json'
 ```
 
 * http:
 ```sh
-http://localhost:8000/sat?rfce=XXX1234567&rfcr=YYY12345678&monto=1000&folio=AXBVVDGGDGD
+http://localhost:80/sat?rfce=XXX1234567&rfcr=YYY12345678&monto=1000&folio=AXBVVDGGDGD
 ```
 All these parameters can be consulted on any valid printed invoice or payroll receipt.
 
@@ -152,7 +152,7 @@ The response (TB Documented), but its pretty intuitive throws something like thi
 ```
 If you get a <b>Y</b> then its valid and you make sure Estado is not cancelled, and you have just verified if an Invoice or Payroll Receipt is valid. This allows you to determine validity, your companies submitted invoices, and even determine income deteremination for loans in a fintech/neobank space.
 
-_To view the Swagger, OpenAPI spec to use on Postman or any other cool tool, just browse to http://localhost:8000/docs or http://localhost:8000/redoc. You can even invoke the API from the /docs endpoint._ 
+_To view the Swagger, OpenAPI spec to use on Postman or any other cool tool, just browse to http://localhost:80/docs or http://localhost:80/redoc. You can even invoke the API from the /docs endpoint._ 
 
 FastAPI rocks!
 
