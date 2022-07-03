@@ -1,14 +1,13 @@
 # Marvin Nahmias. Todos los derechos reservados. (2021)
 # Puedes usar este código libremente, solo referencíame con link a GitHub.
-# Revisar CFDIs validos ante SAT con 4 argumentos:
-# RFC Emisor, RFC Receptor, Monto del CFDI Neto, Folio
-# Se utiliza FastAPI como framework, Suds-py3 como SOAP client
+# SAT MX TOOLKIT
+# Se utiliza FastAPI como framework, uvicorn, pyfiscal, Suds-py3 como SOAP client
 # y JSON para serializar
 
 import json, ssl
 from fastapi import FastAPI, Response
 from suds.client import Client
-from pyfiscal.generate import GenerateRFC
+from pyfiscal.generate import GenerateRFC, GenerateCURP
 
 # Funcion para convertir SUDS a DICT/Tuple
 def fastest_object_to_dict(obj):
@@ -49,8 +48,8 @@ app = FastAPI(title="SAT-MX Toolkit de APIs",
 async def root():
     return {"Bienvenid@ al toolkit del SAT!": "Consulta /docs para mas información de los APIs."}
 
-@app.get("/sat-cdfi")
-async def cdfi(rfce: str, rfcr: str, monto: str, folio: str):     
+@app.get("/sat-cfdi")
+async def cfdi(rfce: str, rfcr: str, monto: str, folio: str):     
     obj_cfdi = {"rfce": rfce, "rfcr": rfcr, "monto": monto, "folio": folio}   
     
     if (rfce != "") or (rfcr != "") or (monto != "") or (folio != ""):
@@ -73,5 +72,22 @@ async def rfc(nombre: str, apellido1: str, apellido2: str, fecha: str):
 
         rfc = GenerateRFC(**kwargs)
         results = {"RFC": rfc.data}
+    return results
+
+@app.get("/sat-curp")
+async def curp(nombre: str, apellido1: str, apellido2: str, fecha: str, genero: str, ciudad: str, estado: str ):      
+    if (nombre != "") or (apellido1 != "") or (apellido2 != "") or (fecha != "") or (genero != "") or (ciudad != "") or (estado != ""):
+        kwargs2 = {
+            "complete_name": nombre,
+            "last_name": apellido1,
+            "mother_last_name": apellido2,
+            "birth_date": fecha,
+            "gender": genero,
+            "city": ciudad,
+            "state_code": estado
+        }
+        
+        curp = GenerateCURP(**kwargs2)
+        results = {"CURP": curp.data}  
     return results
 
