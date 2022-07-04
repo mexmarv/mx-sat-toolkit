@@ -90,7 +90,7 @@ This will install python3 and pip to install python libraries.
 4. You will run default on your local machine on port :80
    ```js
    INFO:     Will watch for changes in these directories: ['/Users/marvin/Documents/Code/mx-sat-toolkit']
-   INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+   INFO:     Uvicorn running on http://127.0.0.1:80 (Press CTRL+C to quit)
    INFO:     Started reloader process [35729] using watchgod
    INFO:     Started server process [35731]
    INFO:     Waiting for application startup.
@@ -114,7 +114,7 @@ This will install python3 and pip to install python libraries.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Now head to a favorite browser and open http://localhost:8000/sat-cfdi. You will get the required paameters in order to return the validation with the SAT.
+Now head to a favorite browser and open http://localhost:80/sat-cfdi as an example. You will get the required paameters in order to return the validation with the SAT.
 ```JSON
 {"detail":[{"loc":["query","rfce"],"msg":"field required","type":"value_error.missing"},{"loc":["query","rfcr"],"msg":"field required","type":"value_error.missing"},{"loc":["query","monto"],"msg":"field required","type":"value_error.missing"},{"loc":["query","folio"],"msg":"field required","type":"value_error.missing"}]}
 ```
