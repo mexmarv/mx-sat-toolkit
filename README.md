@@ -28,7 +28,7 @@
     <li><a href="#load-testing">Load Testing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#enjoy">Enjoy</a></li>
+    <li><a href="#enjoy!">Enjoy !</a></li>
   </ol>
 </details>
 
@@ -195,11 +195,14 @@ Distributed under the Creative Commons Zero 1.0 License. See `LICENSE.txt` for m
 <!-- CONTACT -->
 ## Contact
 
-Marvin Nahmias - [@mexmarv](https://twitter.com/mexmarv) - mexmarv@gmail.com
-Project Link: [https://github.com/mexmarv/mx-sat-verifica](https://github.com/mexmarv/mx-sat-toolkit)
+Marvin Nahmias - mexmarv@gmail.com & marvin.nahmias@broxel.com
+Project Link: [https://github.com/mexmarv/mx-sat-toolkit](https://github.com/mexmarv/mx-sat-toolkit)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Enjoy! 
-#vamoscontodo. Marvs.
+
+Lets build on Financial Inclusion for all!
+#vamoscontodo. 
+Marvs.
 
