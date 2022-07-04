@@ -154,7 +154,31 @@ If you get a <b>Y</b> then its valid and you make sure Estado is not cancelled, 
 
 _To view the Swagger, OpenAPI spec to use on Postman or any other cool tool, just browse to http://localhost:80/docs or http://localhost:80/redoc. You can even invoke the API from the /docs endpoint._ 
 
-FastAPI rocks!
+## Load Testing (Simple Metrics) FastAPI/Uvicorn/Python/Container and SAT Homoclave Calculation
+
+Uploaded the docker image to Google Cloud Container and published it under the free tear demo account so I could try to Load Test it and see response times. Please see Below Images, but in summary:
+
+1. 100-125 concurrent sessions over time, with a total of 6,000+ cummulative sessions.
+2. It took 7.5 min to do full test scenario.
+3. Response time was less than 10ms per API Response and calculation.
+4. There were no errors and console in GCP is included which shows throttling at 18.12 sessions/sec, at an average 10% CPU utilization at full load, so theoretically with this container we could do 180 sessions/sec at heavy load.
+5. FastAPI + Uvicorn simply rock at these speeds !
+
+<img src="https://github.com/mexmarv/mx-sat-toolkit/blob/main/images/ExecutionPlan.png?raw=true">
+<p align="right">Execution Plan in Time</p>
+
+<img src="https://github.com/mexmarv/mx-sat-toolkit/blob/main/images/GCPLoad.png?raw=true">
+<p align="right">GCP Load @ 18.12 s/sec</p>
+
+<img src="https://github.com/mexmarv/mx-sat-toolkit/blob/main/images/AVGResponseTime.png?raw=true">
+<p align="right">Average Response Time</p>
+
+<img src="https://github.com/mexmarv/mx-sat-toolkit/blob/main/images/NumSessions.png?raw=true">
+<p align="right">Number of Sessions</p>
+
+<img src="https://github.com/mexmarv/mx-sat-toolkit/blob/main/images/CumSessions.png?raw=true">
+<p align="right">Cummulative Sessions</p>
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
