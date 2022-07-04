@@ -131,7 +131,7 @@ async def rfc(nombre: str, apellido1: str, apellido2: str, fecha: Union[date, No
 
 
 @app.get("/sat-curp", tags=["CURP"])
-async def sat_curp(nombre: str, apellido1: str, apellido2: str, fecha: Union[date, None], genero: str, codigo_edo: str):
+async def curp(nombre: str, apellido1: str, apellido2: str, fecha: Union[date, None], genero: str, codigo_edo: str):
 
     if codigo_edo.upper() not in entities.values():
         raise HTTPException(status_code=404, detail=codigo_edo +
