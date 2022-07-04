@@ -25,7 +25,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#load testing">Load Testing</a></li>
+    <li><a href="#load-testing">Load Testing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#enjoy">Enjoy</a></li>
@@ -155,8 +155,10 @@ If you get a <b>Y</b> then its valid and you make sure Estado is not cancelled, 
 
 _To view the Swagger, OpenAPI spec to use on Postman or any other cool tool, just browse to http://localhost:80/docs or http://localhost:80/redoc. You can even invoke the API from the /docs endpoint._ 
 
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 ## Load Testing
-### Simple Metrics) FastAPI/Uvicorn/Python/Container and SAT Homoclave Calculation
+<b>(Simple Metrics) FastAPI/Uvicorn/Python/Container and SAT Homoclave Calculation</b>
 
 Uploaded the docker image to Google Cloud Container and published it under the free tear demo account so I could try to Load Test it and see response times. Please see Below Images, but in summary:
 
@@ -180,7 +182,6 @@ Uploaded the docker image to Google Cloud Container and published it under the f
 
 <img src="https://github.com/mexmarv/mx-sat-toolkit/blob/main/images/CumSessions.png?raw=true">
 <p align="right">Cummulative Sessions</p>
-
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
