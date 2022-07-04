@@ -28,7 +28,7 @@
     <li><a href="#load-testing">Load Testing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#enjoy!">Enjoy !</a></li>
+    <li><a href="#enjoy">Enjoy!</a></li>
   </ol>
 </details>
 
@@ -200,7 +200,7 @@ Project Link: [https://github.com/mexmarv/mx-sat-toolkit](https://github.com/mex
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Enjoy! 
+## Enjoy 
 
 Lets build on Financial Inclusion for all!
 #vamoscontodo. 
