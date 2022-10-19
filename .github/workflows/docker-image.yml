@@ -1,10 +1,17 @@
-name: Docker Image CI
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+# GitHub recommends pinning actions to a commit SHA.
+# To get a newer version, you will need to update the SHA.
+# You can also reference a tag or branch, but the action may change without warning.
+
+name: Create and publish a Docker image
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: ['release']
 
 env:
   REGISTRY: ghcr.io
@@ -16,10 +23,6 @@ jobs:
     permissions:
       contents: read
       packages: write
-
-  build:
-    
-    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
